@@ -4,6 +4,16 @@
   "package": "org.example.example.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "doublemixins.MixinServerPlayNetworkHandler",
+    "doublemixins.MixinWorldBorder",
+    "doublemixins.MixinWorldBorderComamnd",
+    "doublemixins.MixinWorldData",
+    "integermixins.MixinMinecraftServer",
+    "integermixins.MixinPlayerManager",
+    "integermixins.MixinCommand",
+    "integermixins.MixinBlockPos",
+    "integermixins.MixinWorld",
+    "MixinVeinFeature"
   ],
   "client": [
     "TitleScreenMixin"
