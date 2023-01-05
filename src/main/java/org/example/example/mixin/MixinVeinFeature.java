@@ -30,10 +30,10 @@ public class MixinVeinFeature {
     @Overwrite
     public boolean place(World world, Random random, BlockPos pos) {
         float var4 = random.nextFloat() * (float) Math.PI;
-        double var5 = (double)((float)(pos.getX() + 8) + MathHelper.sin(var4) * (float)this.size / 8.0F);
-        double var7 = (double)((float)(pos.getX() + 8) - MathHelper.sin(var4) * (float)this.size / 8.0F);
-        double var9 = (double)((float)(pos.getZ() + 8) + MathHelper.cos(var4) * (float)this.size / 8.0F);
-        double var11 = (double)((float)(pos.getZ() + 8) - MathHelper.cos(var4) * (float)this.size / 8.0F);
+        double var5 = (double)((pos.getX() + 8) + MathHelper.sin(var4) * this.size / 8.0F);
+        double var7 = (double)((pos.getX() + 8) - MathHelper.sin(var4) * this.size / 8.0F);
+        double var9 = (double)((pos.getZ() + 8) + MathHelper.cos(var4) * this.size / 8.0F);
+        double var11 = (double)((pos.getZ() + 8) - MathHelper.cos(var4) * this.size / 8.0F);
         double var13 = (double)(pos.getY() + random.nextInt(3) - 2);
         double var15 = (double)(pos.getY() + random.nextInt(3) - 2);
 
