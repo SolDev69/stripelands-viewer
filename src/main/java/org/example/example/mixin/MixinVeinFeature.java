@@ -43,8 +43,8 @@ public class MixinVeinFeature {
             double var21 = var13 + (var15 - var13) * (double)var18;
             double var23 = var9 + (var11 - var9) * (double)var18;
             double var25 = random.nextDouble() * (double)this.size / 16.0;
-            double var27 = (double)(MathHelper.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
-            double var29 = (double)(MathHelper.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
+            double var27 = (double)(Math.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
+            double var29 = (double)(Math.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
             int var31 = MathHelper.floor(var19 - var27 / 2.0);
             int var32 = MathHelper.floor(var21 - var29 / 2.0);
             int var33 = MathHelper.floor(var23 - var27 / 2.0);
