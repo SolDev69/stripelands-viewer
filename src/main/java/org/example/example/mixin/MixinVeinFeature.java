@@ -30,10 +30,10 @@ public class MixinVeinFeature {
     @Overwrite
     public boolean place(World world, Random random, BlockPos pos) {
         double var4 = random.nextDouble() * Math.PI;
-        double var5 = (double)((pos.getX() + 8) + MathHelper.sin((float)var4) * this.size / 8.0F);
-        double var7 = (double)((pos.getX() + 8) - MathHelper.sin((float)var4) * this.size / 8.0F);
-        double var9 = (double)((pos.getZ() + 8) + MathHelper.cos((float)var4) * this.size / 8.0F);
-        double var11 = (double)((pos.getZ() + 8) - MathHelper.cos((float)var4) * this.size / 8.0F);
+        double var5 = (double)((pos.getX() + 8) + Math.sin(var4) * this.size / 8.0F);
+        double var7 = (double)((pos.getX() + 8) - Math.sin(var4) * this.size / 8.0F);
+        double var9 = (double)((pos.getZ() + 8) + Math.cos(var4) * this.size / 8.0F);
+        double var11 = (double)((pos.getZ() + 8) - Math.cos(var4) * this.size / 8.0F);
         double var13 = (double)(pos.getY() + random.nextInt(3) - 2);
         double var15 = (double)(pos.getY() + random.nextInt(3) - 2);
 
@@ -43,8 +43,8 @@ public class MixinVeinFeature {
             double var21 = var13 + (var15 - var13) * (double)var18;
             double var23 = var9 + (var11 - var9) * (double)var18;
             double var25 = random.nextDouble() * (double)this.size / 16.0;
-            double var27 = (double)(MathHelper.sin((float) (Math.PI * var18)) + 1.0F) * var25 + 1.0;
-            double var29 = (double)(MathHelper.sin((float) (Math.PI * var18)) + 1.0F) * var25 + 1.0;
+            double var27 = (double)(MathHelper.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
+            double var29 = (double)(MathHelper.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
             int var31 = MathHelper.floor(var19 - var27 / 2.0);
             int var32 = MathHelper.floor(var21 - var29 / 2.0);
             int var33 = MathHelper.floor(var23 - var27 / 2.0);
