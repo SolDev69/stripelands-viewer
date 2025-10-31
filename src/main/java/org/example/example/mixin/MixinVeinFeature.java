@@ -15,11 +15,11 @@ import java.util.Random;
 @Mixin(VeinFeature.class)
 public class MixinVeinFeature {
     @Shadow private final int size;
-    @Shadow private final Predicate replacePredicate;
+    @Shadow private final Predicate replaceable;
     @Shadow private final BlockState state;
-    public MixinVeinFeature(int size, Predicate replacePredicate, BlockState state) {
+    public MixinVeinFeature(int size, Predicate replaceable, BlockState state) {
         this.size = size;
-        this.replacePredicate = replacePredicate;
+        this.replaceable = replaceable;
         this.state = state;
     }
 
@@ -62,7 +62,7 @@ public class MixinVeinFeature {
                                 double var44 = ((double)var43 + 0.5 - var23) / (var27 / 2.0);
                                 if (var38 * var38 + var41 * var41 + var44 * var44 < 1.0) {
                                     BlockPos var46 = new BlockPos(var37, var40, var43);
-                                    if (this.replacePredicate.apply(world.getBlockState(var46))) {
+                                    if (this.replaceable.apply(world.getBlockState(var46))) {
                                         world.setBlockState(var46, this.state, 2);
                                     }
                                 }

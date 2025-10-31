@@ -16,7 +16,6 @@
     "MixinVeinFeature"
   ],
   "client": [
-    "TitleScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

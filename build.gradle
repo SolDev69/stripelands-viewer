@@ -24,7 +24,7 @@ dependencies {
 
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	ploceus.dependOsl(project.osl_version)
+//	ploceus.dependOsl(project.osl_version)
 }
 
 processResources {
@@ -60,6 +60,18 @@ jar {
 		rename { "${it}_${base.archivesName.get()}" }
 	}
 }
+
+loom {
+	// Only needed for versions not available from vanilla launcher by default.
+	// customMinecraftManifest.set("https://meta.legacyfabric.net/v2/manifest/${minecraft_version}")
+
+	 runs {
+	 	client {
+	 		programArgs "--userProperties", "{}"
+	 	}
+	 }
+}
+
 
 // Configure the maven publication
 publishing {

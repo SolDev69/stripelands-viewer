@@ -15,7 +15,6 @@
 	"environment": "*",
 	"entrypoints": {
 		"init": [
-			"org.example.example.Entrypoint"
 		]
 	},
 	"mixins": [
@@ -23,7 +22,6 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
-		"minecraft": "1.8-alpha.14.30.a",
-		"osl-entrypoints": ">=0.4.0"
+		"minecraft": "1.8-alpha.14.30.a"
 	}
 }
