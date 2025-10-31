@@ -10,7 +10,7 @@ public class TitleScreenMixin
 {
     @ModifyConstant(
             method = "render",
-            constant = @Constant(stringValue = "Minecraft 14w30b")
+            constant = @Constant(stringValue = "Minecraft 14w30a")
     )
     private static String replaceString(String string) {
         return string + " (Ornithe Modded)";

@@ -73,20 +73,20 @@ public class MixinWorld {
         return Integer.MIN_VALUE;
     }
 
-    @ModifyConstant(constant = @Constant(intValue = 30000000, ordinal = 0), method = "getCollisionBoxes")
+    @ModifyConstant(constant = @Constant(intValue = 30000000, ordinal = 0), method = "getBlockCollisions")
     private int modifyCollisionBoxes(int original) {
         return Integer.MAX_VALUE;
     }
-    @ModifyConstant(constant = @Constant(intValue = 30000000, ordinal = 1), method = "getCollisionBoxes")
+    @ModifyConstant(constant = @Constant(intValue = 30000000, ordinal = 1), method = "getBlockCollisions")
     private int modifyCollisionBoxes2(int original) {
         return Integer.MAX_VALUE;
     }
 
-    @ModifyConstant(constant = @Constant(intValue = -30000000, ordinal = 0), method = "getCollisionBoxes")
+    @ModifyConstant(constant = @Constant(intValue = -30000000, ordinal = 0), method = "getBlockCollisions")
     private int modifyNegativeCollisionBoxes(int original) {
         return Integer.MIN_VALUE;
     }
-    @ModifyConstant(constant = @Constant(intValue = -30000000, ordinal = 1), method = "getCollisionBoxes")
+    @ModifyConstant(constant = @Constant(intValue = -30000000, ordinal = 1), method = "getBlockCollisions")
     private int modifyNegativeCollisionBoxes2(int original) {
         return Integer.MIN_VALUE;
     }
