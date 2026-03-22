@@ -1,15 +1,11 @@
 package dev.solcraft.stripelands_viewer.mixin;
 
-import com.google.common.base.Predicate;
-import net.minecraft.block.state.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.VeinFeature;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.Random;
 
@@ -17,8 +13,8 @@ import java.util.Random;
 public class MixinVeinFeature {
 
     /**
-     * @author
-     * @reason
+     * @author SolDev
+     * @reason fix `java.lang.RuntimeException: Already decorating` at far distances
      */
     @Overwrite
     public boolean place(World world, Random random, BlockPos pos) {
@@ -55,9 +51,9 @@ public class MixinVeinFeature {
                             for(int var43 = var33; var43 <= var36; ++var43) {
                                 double var44 = ((double)var43 + 0.5 - var23) / (var27 / 2.0);
                                 if (var38 * var38 + var41 * var41 + var44 * var44 < 1.0) {
-                                    BlockPos var46 = new BlockPos(var37, var40, var43);
-                                    if (((IMixinVeinFeature) this).getReplaceable().apply(world.getBlockState(var46))) {
-                                        world.setBlockState(var46, ((IMixinVeinFeature) this).getBlockState(), 2);
+                                    BlockPos blockPos = new BlockPos(var37, var40, var43);
+                                    if (((IMixinVeinFeature) this).getReplaceable().apply(world.getBlockState(blockPos))) {
+                                        world.setBlockState(blockPos, ((IMixinVeinFeature) this).getBlockState(), 2);
                                     }
                                 }
                             }
