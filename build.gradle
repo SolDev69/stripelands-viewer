@@ -1,7 +1,7 @@
 plugins {
 	id 'maven-publish'
-	id 'fabric-loom' version '1.11-SNAPSHOT'
-	id 'ploceus' version '1.11-SNAPSHOT'
+	id 'fabric-loom' version '1.15-SNAPSHOT'
+	id 'ploceus' version '1.15-SNAPSHOT'
 }
 
 base {
@@ -20,11 +20,10 @@ repositories {
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings ploceus.featherMappings(project.feather_build)
-
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-//	ploceus.dependOsl(project.osl_version)
+	mappings ploceus.featherMappings(project.feather_build)
+	nests ploceus.nests(project.nests_build)
 }
 
 processResources {
@@ -60,18 +59,6 @@ jar {
 		rename { "${it}_${base.archivesName.get()}" }
 	}
 }
-
-loom {
-	// Only needed for versions not available from vanilla launcher by default.
-	// customMinecraftManifest.set("https://meta.legacyfabric.net/v2/manifest/${minecraft_version}")
-
-	 runs {
-	 	client {
-	 		programArgs "--userProperties", "{}"
-	 	}
-	 }
-}
-
 
 // Configure the maven publication
 publishing {

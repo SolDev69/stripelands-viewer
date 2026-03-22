@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @Mixin(AbstractCommand.class)
 public class MixinCommand {
-    @ModifyArgs(method = "parseTeleportCoordinate(DLjava/lang/String;Z)Lnet/minecraft/server/command/AbstractCommand__Coordinate;", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/command/AbstractCommand;parseTeleportCoordinate(DLjava/lang/String;IIZ)Lnet/minecraft/server/command/AbstractCommand__Coordinate;"))
+    @ModifyArgs(method = "parseTeleportCoordinate(DLjava/lang/String;Z)Lnet/minecraft/server/command/AbstractCommand$Coordinate;", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/command/AbstractCommand;parseTeleportCoordinate(DLjava/lang/String;IIZ)Lnet/minecraft/server/command/AbstractCommand$Coordinate;"))
     private static void modifyParseCoordinateReturnValue(Args args) {
         args.set(2, Integer.MIN_VALUE);
         args.set(3, Integer.MAX_VALUE);
