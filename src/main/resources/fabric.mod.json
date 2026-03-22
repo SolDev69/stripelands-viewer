@@ -11,7 +11,7 @@
 		"homepage": "https://solcraft.dev",
 		"sources": "https://github.com/SolDev69/stripelands-viewer"
 	},
-	"license": "",
+	"license": "MIT",
 	"icon": "assets/stripelands_viewer/icon.png",
 	"environment": "*",
 	"entrypoints": {

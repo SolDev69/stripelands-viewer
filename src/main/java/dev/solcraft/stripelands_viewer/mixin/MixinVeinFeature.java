@@ -33,23 +33,23 @@ public class MixinVeinFeature {
             double var23 = var9 + (var11 - var9) * var18;
             double var25 = random.nextDouble() * (double)((IMixinVeinFeature) this).getSize() / 16.0;
             double v = (Math.sin(Math.PI * var18) + 1.0F) * var25;
-            double var27 = v + 1.0;
-            double var29 = v + 1.0;
-            int var31 = MathHelper.floor(var19 - var27 / 2.0);
-            int var32 = MathHelper.floor(var21 - var29 / 2.0);
-            int var33 = MathHelper.floor(var23 - var27 / 2.0);
-            int var34 = MathHelper.floor(var19 + var27 / 2.0);
-            int var35 = MathHelper.floor(var21 + var29 / 2.0);
-            int var36 = MathHelper.floor(var23 + var27 / 2.0);
+            double x = v + 1.0;
+            double z = v + 1.0;
+            int var31 = MathHelper.floor(var19 - x / 2.0);
+            int var32 = MathHelper.floor(var21 - z / 2.0);
+            int var33 = MathHelper.floor(var23 - x / 2.0);
+            int var34 = MathHelper.floor(var19 + x / 2.0);
+            int var35 = MathHelper.floor(var21 + z / 2.0);
+            int var36 = MathHelper.floor(var23 + x / 2.0);
 
             for(int var37 = var31; var37 <= var34; ++var37) {
-                double var38 = ((double)var37 + 0.5 - var19) / (var27 / 2.0);
+                double var38 = ((double)var37 + 0.5 - var19) / (x / 2.0);
                 if (var38 * var38 < 1.0) {
                     for(int var40 = var32; var40 <= var35; ++var40) {
-                        double var41 = ((double)var40 + 0.5 - var21) / (var29 / 2.0);
+                        double var41 = ((double)var40 + 0.5 - var21) / (z / 2.0);
                         if (var38 * var38 + var41 * var41 < 1.0) {
                             for(int var43 = var33; var43 <= var36; ++var43) {
-                                double var44 = ((double)var43 + 0.5 - var23) / (var27 / 2.0);
+                                double var44 = ((double)var43 + 0.5 - var23) / (x / 2.0);
                                 if (var38 * var38 + var41 * var41 + var44 * var44 < 1.0) {
                                     BlockPos blockPos = new BlockPos(var37, var40, var43);
                                     if (((IMixinVeinFeature) this).getReplaceable().apply(world.getBlockState(blockPos))) {
