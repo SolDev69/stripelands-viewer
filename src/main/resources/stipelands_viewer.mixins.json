@@ -13,7 +13,8 @@
     "integermixins.MixinCommand",
     "integermixins.MixinBlockPos",
     "integermixins.MixinWorld",
-    "MixinVeinFeature"
+    "MixinVeinFeature",
+    "IMixinVeinFeature"
   ],
   "client": [
   ],

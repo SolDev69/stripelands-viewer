@@ -6,6 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.VeinFeature;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -14,14 +15,6 @@ import java.util.Random;
 
 @Mixin(VeinFeature.class)
 public class MixinVeinFeature {
-    @Shadow private final int size;
-    @Shadow private final Predicate replaceable;
-    @Shadow private final BlockState state;
-    public MixinVeinFeature(int size, Predicate replaceable, BlockState state) {
-        this.size = size;
-        this.replaceable = replaceable;
-        this.state = state;
-    }
 
     /**
      * @author
@@ -30,21 +23,22 @@ public class MixinVeinFeature {
     @Overwrite
     public boolean place(World world, Random random, BlockPos pos) {
         double var4 = random.nextDouble() * Math.PI;
-        double var5 = (double)((pos.getX() + 8) + Math.sin(var4) * this.size / 8.0F);
-        double var7 = (double)((pos.getX() + 8) - Math.sin(var4) * this.size / 8.0F);
-        double var9 = (double)((pos.getZ() + 8) + Math.cos(var4) * this.size / 8.0F);
-        double var11 = (double)((pos.getZ() + 8) - Math.cos(var4) * this.size / 8.0F);
-        double var13 = (double)(pos.getY() + random.nextInt(3) - 2);
-        double var15 = (double)(pos.getY() + random.nextInt(3) - 2);
+        double var5 = (pos.getX() + 8) + Math.sin(var4) * ((IMixinVeinFeature) this).getSize() / 8.0F;
+        double var7 = (pos.getX() + 8) - Math.sin(var4) * ((IMixinVeinFeature) this).getSize() / 8.0F;
+        double var9 = (pos.getZ() + 8) + Math.cos(var4) * ((IMixinVeinFeature) this).getSize() / 8.0F;
+        double var11 = (pos.getZ() + 8) - Math.cos(var4) * ((IMixinVeinFeature) this).getSize() / 8.0F;
+        double var13 = pos.getY() + random.nextInt(3) - 2;
+        double var15 = pos.getY() + random.nextInt(3) - 2;
 
-        for(int var17 = 0; var17 < this.size; ++var17) {
-            double var18 = var17 / (double)this.size;
-            double var19 = var5 + (var7 - var5) * (double)var18;
-            double var21 = var13 + (var15 - var13) * (double)var18;
-            double var23 = var9 + (var11 - var9) * (double)var18;
-            double var25 = random.nextDouble() * (double)this.size / 16.0;
-            double var27 = (double)(Math.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
-            double var29 = (double)(Math.sin(Math.PI * var18) + 1.0F) * var25 + 1.0;
+        for(int var17 = 0; var17 < ((IMixinVeinFeature) this).getSize(); ++var17) {
+            double var18 = var17 / (double)((IMixinVeinFeature) this).getSize();
+            double var19 = var5 + (var7 - var5) * var18;
+            double var21 = var13 + (var15 - var13) * var18;
+            double var23 = var9 + (var11 - var9) * var18;
+            double var25 = random.nextDouble() * (double)((IMixinVeinFeature) this).getSize() / 16.0;
+            double v = (Math.sin(Math.PI * var18) + 1.0F) * var25;
+            double var27 = v + 1.0;
+            double var29 = v + 1.0;
             int var31 = MathHelper.floor(var19 - var27 / 2.0);
             int var32 = MathHelper.floor(var21 - var29 / 2.0);
             int var33 = MathHelper.floor(var23 - var27 / 2.0);
@@ -62,8 +56,8 @@ public class MixinVeinFeature {
                                 double var44 = ((double)var43 + 0.5 - var23) / (var27 / 2.0);
                                 if (var38 * var38 + var41 * var41 + var44 * var44 < 1.0) {
                                     BlockPos var46 = new BlockPos(var37, var40, var43);
-                                    if (this.replaceable.apply(world.getBlockState(var46))) {
-                                        world.setBlockState(var46, this.state, 2);
+                                    if (((IMixinVeinFeature) this).getReplaceable().apply(world.getBlockState(var46))) {
+                                        world.setBlockState(var46, ((IMixinVeinFeature) this).getBlockState(), 2);
                                     }
                                 }
                             }
