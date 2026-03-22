@@ -1,24 +1,25 @@
 {
 	"schemaVersion": 1,
-	"id": "example_mod",
+	"id": "stripelands_viewer",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Stripelands Viewer",
+	"description": "",
 	"authors": [
-		"Me!"
+		"SolDev69"
 	],
 	"contact": {
-		"homepage": "https://example.com/",
-		"sources": "https://github.com/OrnitheMC/ornithe-template-mod"
+		"homepage": "https://solcraft.dev",
+		"sources": "https://github.com/SolDev69/stripelands-viewer"
 	},
-	"license": "CC0-1.0",
+	"license": "",
+	"icon": "assets/stripelands_viewer/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"init": [
 		]
 	},
 	"mixins": [
-		"example.mixins.json"
+		"stipelands_viewer.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
