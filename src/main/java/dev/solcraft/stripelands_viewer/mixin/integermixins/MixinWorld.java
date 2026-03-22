@@ -1,4 +1,4 @@
-package org.example.example.mixin.integermixins;
+package dev.solcraft.stripelands_viewer.mixin.integermixins;
 
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;

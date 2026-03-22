@@ -1,4 +1,4 @@
-package org.example.example.mixin;
+package dev.solcraft.stripelands_viewer.mixin;
 
 import com.google.common.base.Predicate;
 import net.minecraft.block.state.BlockState;

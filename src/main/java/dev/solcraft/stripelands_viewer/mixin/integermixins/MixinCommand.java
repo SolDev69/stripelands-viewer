@@ -1,4 +1,4 @@
-package org.example.example.mixin.integermixins;
+package dev.solcraft.stripelands_viewer.mixin.integermixins;
 
 import net.minecraft.server.command.AbstractCommand;
 import net.minecraft.server.command.Command;

@@ -4,16 +4,16 @@
   "package": "org.example.example.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "doublemixins.MixinServerPlayNetworkHandler",
-    "doublemixins.MixinWorldBorder",
-    "doublemixins.MixinWorldBorderComamnd",
-    "doublemixins.MixinWorldData",
-    "integermixins.MixinMinecraftServer",
-    "integermixins.MixinPlayerManager",
-    "integermixins.MixinCommand",
-    "integermixins.MixinBlockPos",
-    "integermixins.MixinWorld",
-    "MixinVeinFeature"
+    "dev.solcraft.stripelands_viewer.mixin.doublemixins.MixinServerPlayNetworkHandler",
+    "dev.solcraft.stripelands_viewer.mixin.doublemixins.MixinWorldBorder",
+    "dev.solcraft.stripelands_viewer.mixin.doublemixins.MixinWorldBorderComamnd",
+    "dev.solcraft.stripelands_viewer.mixin.doublemixins.MixinWorldData",
+    "dev.solcraft.stripelands_viewer.mixin.integermixins.MixinMinecraftServer",
+    "dev.solcraft.stripelands_viewer.mixin.integermixins.MixinPlayerManager",
+    "dev.solcraft.stripelands_viewer.mixin.integermixins.MixinCommand",
+    "dev.solcraft.stripelands_viewer.mixin.integermixins.MixinBlockPos",
+    "dev.solcraft.stripelands_viewer.mixin.integermixins.MixinWorld",
+    "dev.solcraft.stripelands_viewer.mixin.MixinVeinFeature"
   ],
   "client": [
   ],

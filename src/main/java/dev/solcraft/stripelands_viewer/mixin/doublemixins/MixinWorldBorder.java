@@ -1,4 +1,4 @@
-package org.example.example.mixin.doublemixins;
+package dev.solcraft.stripelands_viewer.mixin.doublemixins;
 
 import net.minecraft.world.border.WorldBorder;
 import org.spongepowered.asm.mixin.Mixin;

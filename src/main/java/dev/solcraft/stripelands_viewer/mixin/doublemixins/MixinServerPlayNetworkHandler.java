@@ -1,4 +1,4 @@
-package org.example.example.mixin.doublemixins;
+package dev.solcraft.stripelands_viewer.mixin.doublemixins;
 
 import net.minecraft.server.network.handler.ServerPlayNetworkHandler;
 import org.spongepowered.asm.mixin.Mixin;
