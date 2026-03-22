@@ -14,15 +14,11 @@
 	"license": "MIT",
 	"icon": "assets/stripelands_viewer/icon.png",
 	"environment": "*",
-	"entrypoints": {
-		"init": [
-		]
-	},
 	"mixins": [
 		"stipelands_viewer.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.21",
-		"minecraft": "1.8-alpha.14.30.a"
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.8-alpha.14.30.a"
 	}
 }
